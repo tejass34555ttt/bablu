@@ -19,7 +19,7 @@ router.post('/send-otp', async (req, res) => {
       from: `"Appwrite OTP" <${process.env.SMTP_USERNAME}>`,
       to: email,
       subject: 'Your OTP Code',
-      text: `Your OTP is: ${otp}`,
+      text: ` ${otp}  is your Appwrite login OTP. Valid for 5 minutes. Please do not share this code with anyone.`,
     });
 
     res.json({ message: 'OTP sent successfully' });
